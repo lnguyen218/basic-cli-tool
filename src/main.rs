@@ -56,13 +56,13 @@ fn main() {
                     if n >= 3 {
                         match buffer[2] {
                             65 => {
-                                // Up
+                                // Up Arrow
                                 if selected > 0 {
                                     selected -= 1;
                                 }
                             }
                             66 => {
-                                // Down
+                                // Down Arrow
                                 if selected + 1 < options.len() {
                                     selected += 1;
                                 }
@@ -71,12 +71,12 @@ fn main() {
                         }
                     }
                 }
-                119 => { // W
+                107 | 119 => { // k | w
                     if selected > 0 {
                         selected -= 1;
                     }
                 }
-                115 => { // S
+                106 | 115 => { // j | s
                     if selected + 1 < options.len() {
                         selected += 1;
                     }
@@ -92,6 +92,7 @@ fn main() {
 
     // Restore terminal state
     set_raw_mode(false);
+    // print!("\x1b[H\x1b[>25h"); // Show cursor again
     print!("\x1b[>25h"); // Show cursor again
     println!("\nSelected: {}", options[selected]);
 }
