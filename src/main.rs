@@ -71,17 +71,19 @@ fn main() {
                         }
                     }
                 }
-                107 | 119 => { // k | w
+                107 | 119 => {
+                    // k | w
                     if selected > 0 {
                         selected -= 1;
                     }
                 }
-                106 | 115 => { // j | s
+                106 | 115 => {
+                    // j | s
                     if selected + 1 < options.len() {
                         selected += 1;
                     }
                 }
-                10 | 13 | 32 => { 
+                10 | 13 | 32 => {
                     // Enter key (\n or \r) or Spacebar
                     break;
                 }
