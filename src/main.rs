@@ -95,6 +95,6 @@ fn main() {
     // Restore terminal state
     set_raw_mode(false);
     // print!("\x1b[H\x1b[>25h"); // Show cursor again
-    print!("\x1b[>25h"); // Show cursor again
+    print!("\x1b[?25h"); // Show cursor again
     println!("\nSelected: {}", options[selected]);
 }
